@@ -1,0 +1,30 @@
+<html>
+
+	<head>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	</head>
+
+	<body>
+		
+		<div id="app">
+			<dl>
+				<dt>{{ id }}</dt>
+				<dd>{{ usertext }}</dd>
+			</dl>
+		</div>
+		
+		<div id="app-freeze">
+			<p>{{ foo }}</p>
+			<button v-on:click="foo = 'bazzzyyyyyyyyyyyy'">Change it</button>
+		</div>
+		
+		<div id="example">
+			<p>{{ name }}</p>
+			<button v-on:click="name = 'lesson5'">Change it</button>
+		</div>
+
+		<script src="js/instance.js"></script>
+
+	</body>
+
+</html>
