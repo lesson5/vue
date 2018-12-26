@@ -1,0 +1,51 @@
+<html>
+
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+	<h1>テンプレート構文</h1>
+
+	<div id="syntax01">
+		<h2>展開</h2>
+		<h3>テキスト</h3>
+		<p>mustache タグ：二重中括弧</p>
+		<blockquote>
+			<p><span>{{ message }}</span></p>
+		</blockquote>
+		<h4>v-once ディレクティブ</h4>
+		<blockquote>
+			<p><span v-once>This will never change: {{ message2 }}</span></p>
+		</blockquote>
+		<h3>生の HTML</h3>
+		<p>2重中括弧の mustaches は、データを HTML ではなく、プレーンなテキストとして扱います。実際の HTML として出力するためには、v-html ディレクティブを使用する必要があります</p>
+		<blockquote>
+			<p>Using mustaches: {{ rawHtml }}</p>
+			<p>Using v-html directive: <span v-html="rawHtml"></span></p>
+		</blockquote>
+		<h3>属性</h3>
+		<p>Mustache は、HTML 属性の内部で使用することはできません。代わりに、v-bind ディレクティブを使用してください</p>
+		<p>v-bind:idならidが変わる<br>v-bind:titleならtitleが変わる</p>
+		<blockquote>
+			<div v-bind:id="dynamicId">このdivのidは {{ dynamicId }}</div>
+			<div v-bind:title="dynamicTitle">このdivのtitleは {{ dynamicTitle }}</div>
+		</blockquote>
+		<h3>JavaScript 式の使用</h3>
+		<p>これまで、テンプレートに単純なキーをバインディングしてきました。実際には Vue.js は全てのデータバインディング内部で JavaScript 式を完全にサポートします</p>
+		<blockquote>
+			<p><span>{{ message + '追加テキスト' }}</span></p>
+			<p>{{ ok ? 'YES' : 'NO' }}</p>
+		</blockquote>
+	</div>
+	
+	<div id="syntax02">
+		<h2>ディレクティブ</h2>
+	</div>
+
+	<script src="js/syntax.js"></script>
+
+</body>
+
+</html>
