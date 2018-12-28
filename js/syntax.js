@@ -10,3 +10,11 @@ var app = new Vue({
 	}
 })
 
+var app2 = new Vue({
+	el: '#syntax02',
+	data: {
+		seen: true,
+		url: 'https://soundcloud.com/you/tracks',
+		windowopen: '_blank'
+	}
+})

@@ -19,4 +19,10 @@
 [テンプレート構文](https://jp.vuejs.org/v2/guide/syntax.html)  
 [作成ページ](syntax.html)  
 [js](js/syntax.js)  
-展開まで終了(-20181226) 
+展開まで終了(-20181226)  
+このページを終了した(-20181228)  
+
+## 算出プロパティとウォッチャ
+[算出プロパティとウォッチャ](https://jp.vuejs.org/v2/guide/computed.html)  
+[作成ページ](computed.html)  
+[js](js/computed.js)  

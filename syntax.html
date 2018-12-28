@@ -42,6 +42,42 @@
 	
 	<div id="syntax02">
 		<h2>ディレクティブ</h2>
+		<p>ディレクティブは v- から始まる特別な属性です。ディレクティブ属性値は、単一の JavaScript 式を期待します(ただし、v-forは例外で、これについては後から説明します)。ディレクティブの仕事は、属性値の式が変化したときに、リアクティブに副作用を DOM に適用することです。イントロダクションで見た例を振り返ってみましょう</p>
+		<blockquote>
+			<p v-if="seen">Now you see me</p>
+		</blockquote>
+		<h3>引数</h3>
+		<p>ディレクティブの中には “引数” を取るものもあります。これはディレクティブ名の後にコロンで表記します。例えば、v-bindディレクティブは、リアクティブに HTML 属性を更新します:</p>
+		<blockquote>
+			<a v-bind:href="url" v-bind:target="windowopen">v-bindにあるurlがhrefにbindされる</a>
+		</blockquote>
+		<h3>修飾子</h3>
+		<p>修飾子 (Modifier) は、ドットで表記された特別な接尾語で、ディレクティブが特別な方法で束縛されるべきということを示します。例えば、.prevent 修飾子は v-on ディレクティブに、イベントがトリガされた際 event.preventDefault() を呼ぶように伝えます</p>
+		<blockquote>
+			<form v-on:submit.prevent="onSubmit">
+				<input type="text" name="onSubmit" value="onSubmit">
+				<input type="submit" value="submit">
+			</form>
+		</blockquote>
+	</div>
+	
+	<div id="syntax03">
+		<h2>省略記法</h2>
+		<p>v- 接頭辞は、テンプレート内の Vue 独自の属性を識別するための目印となっています。これは既存のマークアップに対して、 Vue.js を利用して動的な振る舞いを適用する場合に便利ですが、頻繁に利用されるディレクティブに対しては冗長に感じることがあるでしょう。同時にシングルページアプリケーションを作成するにあたり、全てのテンプレートを Vue.js で管理しているとき、v- 接頭辞を付ける必要性は低いものになるでしょう。したがって、 Vue.js は 2 つの最もよく使われるディレクティブ v-bind と v-on に対して特別な省略記法を提供しています</p>
+		<h3>v-bindを省略する時は</h3>
+		<blockquote>
+			<h4>完全</h4>
+			<p>a v-bind:href="url"</p>
+			<h4>省略</h4>
+			<p>a :href="url"</p>
+		</blockquote>
+		<h3>v-onを省略する時は</h3>v
+		<blockquote>
+			<h4>完全</h4>
+			<p>a v-on:click="doSomething"</p>
+			<h4>省略</h4>
+			<p>a @click="doSomething"</p>
+		</blockquote>
 	</div>
 
 	<script src="js/syntax.js"></script>
