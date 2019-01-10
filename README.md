@@ -26,3 +26,4 @@
 [算出プロパティとウォッチャ](https://jp.vuejs.org/v2/guide/computed.html)  
 [作成ページ](computed.html)  
 [js](js/computed.js)  
+このページを終了した(-20190110)  
