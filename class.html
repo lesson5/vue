@@ -1,0 +1,82 @@
+<html>
+
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+	<h1>クラスとスタイルのバインディング</h1>
+
+	<p>データバインディングに一般に求められることの 1 つは、要素のクラスリストとインラインスタイルを操作することです。それらはどちらも属性ですから、v-bind を使って扱うことができます。最終的な文字列を式で計算するだけです。しかしながら、文字列の連結に手を出すのは煩わしく、エラーのもとです。そのため、Vue は v-bind が class と style と一緒に使われるとき、特別な拡張機能を提供します。文字列だけではなく、式はオブジェクトまたは配列を返すことができます。</p>
+
+	<h2>HTML クラスのバインディング</h2>
+
+	<h3>オブジェクト構文</h3>
+	<p>v-bind:class にオブジェクトを渡すことでクラスを動的に切り替えることができます:</p>
+
+	<div id="class01">
+		<blockquote>
+			<p class="static" v-bind:class="{ active: isActive, 'text-danger': hasError }">isActive:{{ isActive }}　hasError:{{ hasError }}</p>
+		</blockquote>
+	</div>
+	
+	<p>isActive もしくは hasError が変化するとき、クラスリストはそれに応じて更新されます。例えば、hasError が true になった場合、クラスリストは "static active text-danger" になります。</p>
+
+	<p>束縛されるオブジェクトはインラインでなくてもかまいません:</p>
+
+	<div id="class02">
+		<p class="static" v-bind:class="classObject">{{ classObject }}</p>
+	</div>
+	
+	<p>これは同じ結果を描画します。オブジェクトを返す算出プロパティに束縛することもできます。これは一般的で強力なパターンです:</p>
+	
+	<div id="class03">
+		<p v-bind:class="classObject">{{ classObject }}</p>
+	</div>
+	
+	
+	<h3>配列構文</h3>
+	<p>v-bind:class に配列を渡してクラスのリストを適用することができます:</p>
+	<div id="class04">
+		<p v-bind:class="[{ active: isActive }, errorClass]"></p>
+	</div>
+	<p>リスト内のクラスを条件に応じて切り替えたい場合は、三項演算子式を使って実現することができます:</p>
+	<p>この場合 errorClass は常に適用されますが、activeClass クラスは isActive が真と評価されるときだけ適用されます。</p>
+	<p>しかしながら、これでは複数の条件つきクラスがあると少し冗長になってしまいます。そのため、配列構文の内部ではオブジェクト構文を使うこともできます:</p>
+	
+	<h3>コンポーネントにおいて</h3>
+	<p>スキップ</p>
+	
+	
+	<h2>インラインスタイルのバインディング</h2>
+	
+	<h3>オブジェクト構文</h3>
+	<p>v-bind:style 向けのオブジェクト構文は非常に簡単です。JavaScript オブジェクトということを除けば、ほとんど CSS のように見えます。CSS のプロパティ名には、キャメルケース (camelCase) またはケバブケース (kebab-case: クォートとともに使うことになります) のどちらでも使用することができます:</p>
+	<p>テンプレートをクリーンにするために、直接 style オブジェクトに束縛するのは、よいアイディアです:</p>
+	
+	<div id="class05">
+		<div v-bind:style="styleObject">{{ styleObject }}</div>
+	</div>
+	
+	<h3>配列構文</h3>
+	<p>v-bind:style 向けの配列構文は、同じ要素に複数のスタイルオブジェクトを適用することができます:</p>
+	<div id="class06">
+		<div v-bind:style="[baseStyles, overridingStyles]">{{ baseStyles }}</div>
+	</div>
+	
+	<h3>自動プリフィックス</h3>
+	<p>v-bind:style でベンダー接頭辞を要求される CSS プロパティを使用するとき、例えば、transform においては、Vue.js は自動的に適切な接頭辞を検出し、適用されるスタイルに追加します。</p>
+	
+	<h3>複数の値</h3>
+	<p>2.3.0 以降では、 style プロパティに複数の (接頭辞付き) 値の配列を設定できます。例えば次のようになります:</p>
+	<div id="class07">
+		<div v-bind:style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
+	</div>
+	<p>これは、配列内でブラウザがサポートしている最後の値だけを描画します。この例では、flexbox の接頭されていないバージョンをサポートしているブラウザでは display: flex を描画します。</p>
+
+	<script src="js/class.js"></script>
+
+</body>
+
+</html>
