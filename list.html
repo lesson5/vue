@@ -1,0 +1,49 @@
+<html>
+
+<head>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+
+	<h2>v-for で配列に要素をマッピングする</h2>
+
+	<p>配列に基づいて、アイテムのリストを描画するために、v-for ディレクティブを使用することができます。v-for ディレクティブは item in items の形式で特別な構文を要求し、items はソースデータの配列で、item は配列要素がその上で反復されているエイリアスです:</p>
+	
+	<blockquote>
+		<ul id="list01">
+			<li v-for="(item, index) in items">
+				{{ index }} - {{ item.message }} - {{ item.message2 }}
+			</li>
+		</ul>
+	</blockquote>
+	
+	<p>v-for ブロック内では、親スコープのプロパティへの完全なアクセスを持っています。また v-for は現在のアイテムに対する配列のインデックスを、任意の2つ目の引数としてサポートしています。</p>
+	
+	<ul id="list02">
+		<li v-for="(item, index) of items">
+			{{ parentMessage }} - {{ index }} - {{ item.message }}
+		</li>
+	</ul>
+	
+	<p>また、区切り文字として in の代わりに of を使用することができます。これは JavaScript のイテレータ構文に近いものです:</p>
+	
+	<h2>オブジェクトの v-for</h2>
+	
+	<p>オブジェクトのプロパティに対して、v-for を使って反復処理することができます。</p>
+	<p>2 つ目の引数として key も提供できます:</p>
+	<p>index も提供できます:</p>
+	
+	<ul id="list03" class="demo">
+		<li v-for="(value, key, index) in object">
+			{{ index }}. {{ key }}: {{ value }}
+		</li>
+	</ul>
+	
+	<p>オブジェクトを反復処理するとき、順序は Object.keys() の列挙順のキーに基づいており、全ての JavaScript エンジンの実装で一貫性が保証されていません。</p>
+
+	<script src="js/list.js"></script>
+
+</body>
+
+</html>
