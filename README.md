@@ -29,7 +29,13 @@
 このページを終了した(-20190110)  
 
 ## クラスとスタイルのバインディング
-[クラスとスタイルのバインディング](https://jp.vuejs.org/v2/guide/class.html)  
+[クラスとスタイルのバインディング](https://jp.vuejs.org/v2/guide/class-and-style.html)  
 [作成ページ](class.html)  
 [js](js/class.js)  
 このページを終了した(-20190115)  
+
+## 条件付きレンダリング
+[条件付きレンダリング](https://jp.vuejs.org/v2/guide/conditional.html)  
+[作成ページ](conditional.html)  
+[js](js/conditional.js)  
+このページを終了した(-20190124)  
