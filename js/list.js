@@ -30,3 +30,27 @@ new Vue({
 		}
 	}
 })
+
+new Vue({
+	el: '#list04',
+	data: {
+		items: [
+			{ id:3, message: 'Foo' ,message2: 'FooFooFoo' },
+			{ id:1, message: 'Bar' ,message2: 'BarBarBar' },
+			{ id:2, message: 'Hoge' ,message2: 'HogeHogeHoge' }
+		]
+	}
+})
+
+
+var example1 = new Vue({
+	el: '#list05',
+	data: {
+		items: [
+			{ id:3, message: 'Foo' ,message2: 'FooFooFoo' },
+			{ id:1, message: 'Bar' ,message2: 'BarBarBar' },
+			{ id:2, message: 'Hoge' ,message2: 'HogeHogeHoge' }
+		]
+	}
+})
+example1.items.push({ id:4, message: 'Baz', message2: 'BazBazBaz' })
